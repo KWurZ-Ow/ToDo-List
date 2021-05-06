@@ -1,7 +1,7 @@
 # 🦄 ToDo List
 
 Ceci est un exercice qui m'a été proposé par `Ellistat`
-Le but est de créer une ToDo list.
+Le but est de créer une ToDo list en JS.
 
 ## 📄 Page internet
 
