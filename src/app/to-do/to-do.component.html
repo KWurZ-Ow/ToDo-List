@@ -1,0 +1,30 @@
+<div class="titre">
+    <h1>To Do list - Ellistat</h1>
+    <p>Marius Proton</p>
+</div>
+<mat-card>
+    <div class="list">
+        <div class="new">
+            <mat-form-field>
+                <input (keyup.enter)="add()" autocomplete="off" matInput type="text" id="new" [(ngModel)]="new" placeholder="New task">
+            </mat-form-field>
+            <button mat-icon-button color="primary">
+                <mat-icon (click)="add()">add</mat-icon>
+            </button>
+        </div>
+        <div *ngIf="list != null" class="items"> 
+            <li *ngFor="let i of list; let index = index;" [class.hide]="i[2]" [class.checked]="i[0]">
+                <mat-checkbox (click)="save(this.list)" color="primary" [(ngModel)]="i[0]"></mat-checkbox>
+                <span *ngIf="edited != index">{{i[1]}}</span>
+                <mat-form-field *ngIf="edited == index" [style.width]="(editValue.length * 8) + 'px'">
+                    <input (keyup.enter)="validateEdit(index)" autocomplete="off" matInput type="text" id="edit" [(ngModel)]="editValue">
+                </mat-form-field>
+                <mat-icon *ngIf="edited != index" (click)="edit(index)">edit</mat-icon>
+                <mat-icon *ngIf="edited == index" (click)="validateEdit(index)">check_circle_outline</mat-icon>
+                <mat-icon (click)="remove(index)" color="accent">delete</mat-icon>
+                <p class="date">{{i[3]}}</p>
+            </li>
+        </div>
+        <p *ngIf="list == null">The list is empty :'(</p>
+    </div>
+</mat-card>
