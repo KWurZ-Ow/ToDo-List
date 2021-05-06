@@ -9,4 +9,4 @@ Lien vers la page : https://kwurz-ow.github.io/to-do/
 
 ## 🎓 Consignes
 
-https://raw.githubusercontent.com/KWurZ-Ow/to-do/sources/src/assets/consignes.png
+<img src="https://raw.githubusercontent.com/KWurZ-Ow/to-do/sources/src/assets/consignes.png" width="400"/>
